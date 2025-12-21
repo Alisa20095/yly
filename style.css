@@ -5,17 +5,15 @@
 	font-style: normal;
 }
 
-body{
-	background-color: #d2b48c;
-	margin-left: 20%;
-	margin-right: 20%;
-	border: 2px dotted black;
-	padding: 10px 10px 10px 10px;
-	font-family: sans serif;
-    }
-blockquote.q {
-	color: #D4AF37;
-	border-left: 4px solid #8B0000;
-	font-style: italic;
+body {
+    background-image: url('Icons/background.jpg'); /* путь к фоновому изображению */
+    background-size: cover;       /* растягивает изображение на весь экран */
+    background-repeat: no-repeat; /* не повторять изображение */
+    background-attachment: fixed;  /* фон остаётся на месте при прокрутке */
+    background-color: #f0f8ff;    /* цвет фона на случай, если изображение не загрузится */
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
 }
 p.quote { font-family: “Pudelinka”, cursive;}
