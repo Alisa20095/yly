@@ -1,1 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Crossword (English)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #b22222;
+            margin-bottom: 20px;
+        }
+        .crossword {
+            display: inline-grid;
+            grid-template-columns: repeat(6, 40px);
+            grid-gap: 1px;
+            background-color: #333;
+            padding: 5px;
+            margin: 20px auto;
+            border-radius: 6px;
+        }
+        .cell {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            position: relative;
+        }
+        .cell.black {
+            background-color: black;
+        }
+        .cell input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            text-align: center;
+            font-size: 18px;
+            text-transform: uppercase;
+            box-sizing: border-box;
+        }
+        .clues {
+            max-width: 500px;
+            margin: 20px auto;
+            text-align: left;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .clues h2 {
+            margin-top: 0;
+            color: #b22222;
+        }
+        .clues ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎄 New Year Crossword (English) 🎁</h1>
 
+    <div class="crossword">
+        <!-- Row 0 -->
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+
+        <!-- Row 1 -->
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+
+        <!-- Row 2 -->
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell black"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+
+        <!-- Row 3 -->
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+
+        <!-- Row 4 -->
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell black"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+
+        <!-- Row 5 -->
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+    </div>
+
+    <div class="clues">
+        <h2>Across:</h2>
+        <ul>
+            <li><strong>1.</strong> White flakes from the sky (4 letters)</li>
+            <li><strong>4.</strong> Christmas decoration, often green (4 letters)</li>
+            <li><strong>5.</strong> Present under the tree (4 letters)</li>
+        </ul>
+
+        <h2>Down:</h2>
+        <ul>
+            <li><strong>1.</strong> Shiny object on top of the tree (4 letters)</li>
+            <li><strong>2.</strong> French word for Christmas (4 letters)</li>
+        </ul>
+    </div>
+
+    <p><em>Tip: All answers are 4-letter English words related to New Year and Christmas!</em></p>
+</body>
+</html>
