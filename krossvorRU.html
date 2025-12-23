@@ -1,1 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новогодний кроссворд</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f7ff;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #d40000;
+            margin-bottom: 20px;
+        }
+        .crossword {
+            display: inline-grid;
+            grid-template-columns: repeat(12, 30px);
+            grid-gap: 1px;
+            margin: 20px auto;
+            background-color: #333;
+            padding: 5px;
+            border-radius: 8px;
+        }
+        .cell {
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            position: relative;
+        }
+        .cell.black {
+            background-color: black;
+        }
+        .cell input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            text-align: center;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        .clues {
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: left;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .clues h2 {
+            margin-top: 0;
+            color: #d40000;
+        }
+        .clues ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎄 Новогодний кроссворд 🎁</h1>
 
+    <div class="crossword" id="crossword-grid">
+        <!-- Сетка 12x12 -->
+        <!-- Каждая ячейка: либо input (для буквы), либо чёрная -->
+        <!-- Слово 1 (по гор.): ДЕД МОРОЗ (9 букв) → строка 0, колонки 1-9 -->
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1" placeholder="Д"></div>
+        <div class="cell"><input maxlength="1" placeholder="Е"></div>
+        <div class="cell"><input maxlength="1" placeholder="Д"></div>
+        <div class="cell black"></div>
+        <div class="cell"><input maxlength="1" placeholder="М"></div>
+        <div class="cell"><input maxlength="1" placeholder="О"></div>
+        <div class="cell"><input maxlength="1" placeholder="Р"></div>
+        <div class="cell"><input maxlength="1" placeholder="О"></div>
+        <div class="cell"><input maxlength="1" placeholder="З"></div>
+        <div class="cell black"></div>
+        <div class="cell"><input maxlength="1"></div>
+
+        <!-- Слово 2 (по верт.): СНЕГУРОЧКА (10 букв) → колонка 1, строки 1-10 -->
+        <div class="cell"><input maxlength="1" placeholder="С"></div>
+        <div class="cell"><input maxlength="1" placeholder=""></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell black"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell black"></div>
+        <div class="cell"><input maxlength="1"></div>
+
+        <div class="cell"><input maxlength="1" placeholder="Н"></div>
+        <div class="cell"><input maxlength="1" placeholder=""></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell"><input maxlength="1" placeholder="Ё"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell"><input maxlength="1"></div>
+
+        <div class="cell"><input maxlength="1" placeholder="Е"></div>
+        <div class="cell"><input maxlength="1" placeholder=""></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1" placeholder="М"></div>
+        <div class="cell"><input maxlength="1" placeholder="А"></div>
+        <div class="cell"><input maxlength="1" placeholder="Н"></div>
+        <div class="cell"><input maxlength="1" placeholder="Д"></div>
+        <div class="cell"><input maxlength="1" placeholder="А"></div>
+        <div class="cell"><input maxlength="1" placeholder="Р"></div>
+        <div class="cell"><input maxlength="1" placeholder="И"></div>
+        <div class="cell"><input maxlength="1" placeholder="Н"></div>
+
+        <div class="cell"><input maxlength="1" placeholder="Г"></div>
+        <div class="cell"><input maxlength="1" placeholder=""></div>
+        <div class="cell black"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell"><input maxlength="1"></div>
+
+        <div class="cell"><input maxlength="1" placeholder="У"></div>
+        <div class="cell"><input maxlength="1" placeholder=""></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell black"></div>
+        <div class="cell"><input maxlength="1" placeholder="П"></div>
+        <div class="cell"><input maxlength="1" placeholder="О"></div>
+        <div class="cell"><input maxlength="1" placeholder="Д"></div>
+        <div class="cell"><input maxlength="1" placeholder="А"></div>
+
+        <div class="cell"><input maxlength="1" placeholder="Р"></div>
+        <div class="cell"><input maxlength="1" placeholder=""></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell"><input maxlength="1" placeholder="Р"></div>
+
+        <div class="cell"><input maxlength="1" placeholder="О"></div>
+        <div class="cell"><input maxlength="1" placeholder=""></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1"></div>
+        <div class="cell"><input maxlength="1" placeholder="К"></div>
+        <div class="cell"><input maxlength="1" placeholder="У"></div>
+        <div class="cell"><input maxlength="1" placeholder="Р"></div>
+        <div class="cell"><input maxlength="1" placeholder="А"></div>
+        <div class="cell"><input maxlength="1" placeholder="Н"></div>
+        <div class="cell"><input maxlength="1" placeholder="Т"></div>
+        <div class="cell"><input maxlength="1" placeholder="Ы"></div>
+
+        <div class="cell"><input maxlength="1" placeholder="Ч"></div>
+        <div class="cell"><input maxlength="1" placeholder=""></div>
+        <div class="cell"><input maxlength="1" placeholder="С"></div>
+        <div class="cell"><input maxlength="1" placeholder="Н"></div>
+        <div class="cell"><input maxlength="1" placeholder="Е"></div>
+        <div class="cell"><input maxlength="1" placeholder="Г"></div>
+        <div class="cell black"></div>
+        <div class="cell"><input maxlength="1" placeholder="Х"></div>
+        <div class="cell"><input maxlength="1" placeholder="Л"></div>
+        <div class="cell"><input maxlength="1" placeholder="О"></div>
+        <div class="cell"><input maxlength="1" placeholder="П"></div>
+        <div class="cell"><input maxlength="1" placeholder="У"></div>
+
+        <div class="cell"><input maxlength="1" placeholder="К"></div>
+        <div class="cell"><input maxlength="1" placeholder=""></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell"><input maxlength="1" placeholder="Ш"></div>
+
+        <div class="cell"><input maxlength="1" placeholder="А"></div>
+        <div class="cell"><input maxlength="1" placeholder=""></div>
+        <div class="cell"><input maxlength="1" placeholder="Н"></div>
+        <div class="cell"><input maxlength="1" placeholder="О"></div>
+        <div class="cell"><input maxlength="1" placeholder="В"></div>
+        <div class="cell"><input maxlength="1" placeholder="О"></div>
+        <div class="cell"><input maxlength="1" placeholder="Г"></div>
+        <div class="cell"><input maxlength="1" placeholder="О"></div>
+        <div class="cell"><input maxlength="1" placeholder="Д"></div>
+        <div class="cell"><input maxlength="1" placeholder="Н"></div>
+        <div class="cell"><input maxlength="1" placeholder="И"></div>
+        <div class="cell"><input maxlength="1" placeholder="Й"></div>
+
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+        <div class="cell black"></div>
+    </div>
+
+    <div class="clues">
+        <h2>Слова по горизонтали:</h2>
+        <ul>
+            <li>1. Главный зимний волшебник (9 букв)</li>
+            <li>4. Цитрусовый символ праздника (8 букв)</li>
+            <li>6. То, что кладут под ёлку (7 букв)</li>
+            <li>8. Московские часы, бьющие в полночь (6 букв)</li>
+            <li>9. Игрушка, из которой вылетают конфетти (8 букв)</li>
+            <li>11. Длинная ледяная "слеза" на крыше (7 букв)</li>
+        </ul>
+
+        <h2>Слова по вертикали:</h2>
+        <ul>
+            <li>1. Внучка Деда Мороза (10 букв)</li>
+            <li>2. Главное новогоднее дерево (4 буквы)</li>
+            <li>3. Зимнее белое покрывало (4 буквы)</li>
+            <li>5. Прилагательное от "Новый год" (10 букв)</li>
+        </ul>
+    </div>
+
+    <p><em>Подсказка: все слова связаны с Новым годом и Рождеством!</em></p>
+</body>
+</html>
