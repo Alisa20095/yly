@@ -1,98 +1,122 @@
+Вот готовый HTML/CSS код, который красиво отображает ваши предсказания и сегодняшнюю дату (24.05.2024). Вы можете сохранить его как `.html` файл и открыть в браузере.
+
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой блог</title>
-    <link type="text/css" rel="stylesheet" href="style.css" />
+    <title>Результаты предсказаний</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 1rem;
+        }
+        .header h2 {
+            margin: 0;
+            color: #333;
+            font-size: 1.5rem;
+        }
+        .date {
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        .prediction-item {
+            margin-bottom: 1rem;
+        }
+        .label-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #444;
+        }
+        .bar-container {
+            background-color: #e9ecef;
+            border-radius: 4px;
+            height: 10px;
+            overflow: hidden;
+        }
+        .bar {
+            height: 100%;
+            border-radius: 4px;
+            background-color: #4CAF50; /* Зеленый цвет для успеха */
+            transition: width 0.5s ease-in-out;
+        }
+        /* Выделяем топ-1 результат */
+        .top-prediction .bar {
+            background-color: #2196F3; /* Синий для лидера */
+        }
+        .top-prediction .label-row {
+            color: #2196F3;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <blockquote class="q">Путешествие в тысячу миль начинается с одного шага (Лао Цзы)</blockquote>
 
-    <!-- Кнопка "Назад" -->
-    <p>
-        <button onclick="window.history.back()">← Назад</button>
-    </p>
-
-    <!-- ============ ШИФРЫ: 19.01.2026 ============ -->
-    <h2>19.01.2026</h2>
-    <p>Создано: 14 ЯНВАРЯ 2026</p>
-    <p>Домен — Alisa20095.github.io</p>
-    <p><a href="mailto:dmamedv@mail.ru">Напишите мне</a></p>
-
-    <h3>Шифр Цезаря — решения</h3>
-    <p><strong>Расшифровка:</strong></p>
-    <ul>
-        <li>ФХНЗКЧ → <em>ПРИВЕТ</em> (ключ = 5)</li>
-        <li>ЦЩЕБФ → <em>ВЕСНА</em> (ключ = 20)</li>
-    </ul>
-    <p><strong>Определение ключа по паре «открытый текст – шифротекст»:</strong></p>
-    <ul>
-        <li>АПЕЛЬСИН → САЦЬНВЩЮ ⇒ ключ = <strong>17</strong></li>
-        <li>АБРИКОС → ЫЬЛГЕЙМ ⇒ ключ = <strong>27</strong></li>
-    </ul>
-    <p><strong>Шифрование фамилии:</strong></p>
-    <p>АФОНИНА + ключ 10 → <strong>КЮШЧТЧК</strong></p>
-
-    <!-- ============ КОНТЕНТ ИЗ ВНЕШНЕГО САЙТА ============ -->
-    <h2>19.12.2025</h2>
-    <h3>Поздравляю с наступающим Рождеством 2026!</h3>
-    <h4>Новый год</h4>
-    <p>
-        Я сделала Новогодние кроссворды и поздравление для сайта.<br>
-        <a href="https://adelina771.github.io/dem.github.io/" target="_blank" rel="noopener noreferrer">
-            Поздравление и кроссворды
-        </a>
-    </p>
-    <blockquote>Путешествие в тысячу миль начинается с одного шага (Лао Цзы)</blockquote>
-    <p>Оставляю в прошлом скучную неинтересную локальную файловую систему ради Всемирной паутины.</p>
-
-    <!-- ============ ОСТАЛЬНЫЕ ЗАПИСИ ============ -->
-    <h2>07.01.2026</h2>
-    <div class="kolyadka">
-        <p><strong>Поздравление с Рождеством</strong><br>
-        <em>КОЛЯДКА</em></p>
-        <p>
-            Под окном звезда сияет,<br>
-            В доме ёлка огоньки зажигает.<br>
-            Пусть сбываются мечты и мольбы —<br>
-            С Новым годом! С Рождеством! С чудесами любви!
-        </p>
-        <p>
-            <a href="https://content-studio.sberdevices.ru/media/019b16f5-d46d-7443-b8e4-276feb3439fc/019b1903-e7ef-7e56-aab2-c21c04647044.mp4#t=0.001"
-               target="_blank" rel="noopener noreferrer">
-                Видео с колядкой
-            </a>
-        </p>
+<div class="card">
+    <div class="header">
+        <h2>Результаты AI</h2>
+        <div class="date">Дата: 24.05.2024</div>
     </div>
 
-    <h2>01.01.2026</h2>
-    <img src="Icons/2305759.png" alt="Новый год">
-    <p>Поздравление с Наступающим 2026 годом читайте <a href="Congratulations2026.html">здесь</a>.</p>
+    <!-- Предсказание 1 (Топ) -->
+    <div class="prediction-item top-prediction">
+        <div class="label-row">
+            <span>running shoe</span>
+            <span>99.45%</span>
+        </div>
+        <div class="bar-container">
+            <div class="bar" style="width: 99.45%;"></div>
+        </div>
+    </div>
 
-    <h2>20.12.2025</h2>
-    <p>Куратор-1 раз</p>
-    <p>
-        Иконки: 
-        <a href="https://www.flaticon.com/ru/free-icons/" title="рождество иконки">Рождество иконки от iconixar — Flaticon</a>
-    </p>
+    <!-- Предсказание 2 -->
+    <div class="prediction-item">
+        <div class="label-row">
+            <span>shoe store</span>
+            <span>0.27%</span>
+        </div>
+        <div class="bar-container">
+            <div class="bar" style="width: 0.27%;"></div>
+        </div>
+    </div>
 
-    <h2>15.10.2025</h2>
-    <p>
-        Я сделала Новогодние кроссворды для сайта 
-        <a href="https://adelina771.github.io/dem.github.io/" title="Блог моего друга">Сайт моего друга</a>.
-    </p>
+    <!-- Предсказание 3 -->
+    <div class="prediction-item">
+        <div class="label-row">
+            <span>Clogs</span>
+            <span>0.15%</span>
+        </div>
+        <div class="bar-container">
+            <div class="bar" style="width: 0.15%;"></div>
+        </div>
+    </div>
+</div>
 
-    <h2>01.09.2025</h2>
-    <blockquote>Путешествие в тысячу миль начинается с одного шага (Лао Цзы)</blockquote>
-    <p>
-        Оставляю в прошлом скучную неинтересную локальную файловую систему ради Всемирной паутины.
-    </p>
-
-    <p>
-        <a href="krossvorRU.html">Русский кроссворд</a> 
-        <a href="krossvordEN.html">Английский кроссворд</a>
-    </p>
+</body>
+</html>
+```
 
 </body>
 </html>
