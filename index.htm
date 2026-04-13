@@ -1,125 +1,113 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Результаты предсказаний</title>
+    <title>Мой блог</title>
+    <link type="text/css" rel="stylesheet" href="style.css" />
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+        /* Стили для блока с ответом */
+        .bot-response {
+            background: #f0f7ff;
+            border-left: 4px solid #007bff;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            font-family: sans-serif;
         }
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            width: 350px;
+        .bot-response h3 {
+            margin-top: 0;
+            color: #0056b3;
         }
-        .header {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 1rem;
+        .bot-response ul {
+            padding-left: 20px;
+            margin: 10px 0;
         }
-        .header h2 {
-            margin: 0;
-            color: #333;
-            font-size: 1.5rem;
-        }
-        .date {
-            color: #888;
-            font-size: 0.9rem;
-            margin-top: 5px;
-        }
-        .prediction-item {
-            margin-bottom: 1rem;
-        }
-        .label-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-            font-weight: 500;
-            color: #444;
-        }
-        .bar-container {
-            background-color: #e9ecef;
+        .bot-response code {
+            background: #e9ecef;
+            padding: 2px 6px;
             border-radius: 4px;
-            height: 10px;
+            font-family: monospace;
+        }
+        .footer-info {
+            background: #f8f9fa;
+            padding: 15px;
+            margin-top: 30px;
+            border-top: 1px solid #dee2e6;
+            font-size: 0.9em;
+            color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0 20px;
+            background: #ffffff;
+            border: 1px solid #d6dbe3;
+            border-radius: 10px;
             overflow: hidden;
+            font-family: "Segoe UI", Arial, sans-serif;
+            font-size: 14px;
         }
-        .bar {
-            height: 100%;
-            border-radius: 4px;
-            background-color: #4CAF50; /* Зеленый цвет для успеха */
-            transition: width 0.5s ease-in-out;
+        th, td {
+            border: 1px solid #e4e8ef;
+            padding: 10px 12px;
+            text-align: left;
+            vertical-align: top;
         }
-        /* Выделяем топ-1 результат */
-        .top-prediction .bar {
-            background-color: #2196F3; /* Синий для лидера */
+        th {
+            background: #1f2937;
+            color: #ffffff;
+            font-weight: 600;
+            letter-spacing: 0.2px;
         }
-        .top-prediction .label-row {
-            color: #2196F3;
-            font-weight: bold;
+        tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+        .group {
+            margin-bottom: 22px;
+            padding: 10px 12px;
+            background: #ffffff;
+            border: 1px solid #e4e8ef;
+            border-radius: 8px;
+        }
+        .group h3 {
+            margin: 4px 0 10px;
+            color: #374151;
+        }
+        .results {
+            background: #ffffff;
+            border: 1px solid #e4e8ef;
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin: 12px 0 18px;
+        }
+        .results p {
+            margin: 6px 0;
+        }
+        .lab-2026 {
+            margin-top: 10px;
+            padding: 8px 0 2px;
+        }
+        .lab-2026 h3 {
+            margin-top: 16px;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            color: #1f2937;
+        }
+        .group .diagram-links {
+            margin: 8px 0 10px;
+            font-size: 0.95em;
+        }
+        .group img[alt] {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #e4e8ef;
+            border-radius: 8px;
+            margin-top: 6px;
         }
     </style>
 </head>
-<body>
-    <17 0-2 2026>
-Топ-3 предсказаний:
-running shoe: 99.45%
-shoe store: 0.27%
-clogs: 0.15%
-<div class="card">
-    <div class="header">
-        <h2>Результаты AI</h2>
-        <div class="date">Дата: 24.05.2024</div>
-    </div>
-
-    <!-- Предсказание 1 (Топ) -->
-    <div class="prediction-item top-prediction">
-        <div class="label-row">
-            <span>running shoe</span>
-            <span>99.45%</span>
-        </div>
-        <div class="bar-container">
-            <div class="bar" style="width: 99.45%;"></div>
-        </div>
-    </div>
-
-    <!-- Предсказание 2 -->
-    <div class="prediction-item">
-        <div class="label-row">
-            <span>shoe store</span>
-            <span>0.27%</span>
-        </div>
-        <div class="bar-container">
-            <div class="bar" style="width: 0.27%;"></div>
-        </div>
-    </div>
-
-    <!-- Предсказание 3 -->
-    <div class="prediction-item">
-        <div class="label-row">
-            <span>Clogs</span>
-            <span>0.15%</span>
-        </div>
-        <div class="bar-container">
-            <div class="bar" style="width: 0.15%;"></div>
-        </div>
-    </div>
-</div>
-      <30 0-3 2026>
-        <p>Ошибка на обучении (MSE): 0.02438642440491994,
-Ошибка на тесте (MSE): 0.03194920919435102</p>
-        <p>Нейросеть-неинтрпретирована</p>
-<h2>13.04.2026</h2>
+<body> 
+    <h2>13.04.2026</h2>
     <p><strong>Тема:</strong> Схемы индексных файлов — стоматологическое отделение (врач, медсестра, операция)</p>
 
     <div class="bot-response">
@@ -190,9 +178,10 @@ clogs: 0.15%
         <h3>7. Операция (по полю «Дата операции»)</h3>
         <p>Вторичный индекс для сущности «операция» по полю «дата».</p>
         <p class="diagram-links">
-            <a href="diagrams/07_secondary_index_operation_date.drawio" download>Скачать .drawio</a>
+            <a href="diagrams/07_secondary_index_operation_date.drawio" download>Скачат .drawio</a>
         </p>
         <img src="diagrams/07_secondary_index_operation_date.png" alt="Операция (по полю «Дата операции»)">
     </div>
+
 </body>
 </html>
